@@ -4,8 +4,13 @@ body {
 }
 .top-container {
   width: 100%;
-  background-color: #b9b9b9;
   height: 80px;
+  border: 1px solid #eff2f5;
+  border-bottom-left-radius: 0.9rem;
+  border-bottom-right-radius: 0.9rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgb(62 28 131 / 25%);
 }
 
 .top-container div p {
@@ -28,26 +33,48 @@ body {
 }
 .intro{
   text-align: center;
-  margin: auto 20% auto 20%;
-  height: 450px;
-  width: 60%;
+  margin: auto 25% auto 25%;
+  height: 450px; /*see this and remove */
+  width: 50%;
 }
-.intro h1{
-  padding: 50px;
+.Password{
+  margin: 0;
+  font-size: 3rem;
+  padding-top: 80px; 
+}
+.Buddy{
+  margin: 0;
+  font-size: 3rem;
+  padding-bottom: 0px;
+}
+.text-PB{
+  font-size: 18px;
 }
 .main-bg-img{
   height:80%;
   margin-top: 6%;
   float: left;
-  /* margin-right: 100px; */
 }
+
+.features{
+  height: 500px;
+}
+.features2{
+  height: 500px;
+}
+
+
 
 .bottom-container {
   width: 100%;
   display: block;
-  background-color: #6D5D6E;
   padding: 10px 0 20px;
   text-align: center;
+  /*added*/
+  border: 1px solid #eff2f5;
+  overflow: hidden;
+  background-color: #ffffff;
+  /* box-shadow: 0 0 10px 0 rgb(62 28 131 / 25%); */
 }
 .bottom-container p {
     margin-bottom: 10px;

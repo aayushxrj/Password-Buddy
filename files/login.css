@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.top-container {
+  width: 100%;
+  background-color: #5c75b4;
+  height: 80px;
+}
+
+.top-container div p {
+  color: #000000;
+}
+.flex-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.flex-container > div {
+  font-size: 20px;
+  padding: 9px;
+  margin-right: 25px;
+}
+
+
+
+.middle-container{
+    width: 100%;
+    background-color: #ffffff9e;
+    margin: 20px auto 20px auto;
+}
+.login-form{
+    height: 500px;
+    margin: auto 25% auto 25%;
+    width: 50%;
+}
+
+
+
+.bottom-container {
+  width: 100%;
+  display: block;
+  background-color: #5c75b4;
+  padding: 10px 0 20px;
+  text-align: center;
+}
+.bottom-container p {
+  margin-bottom: 10px;
+}
+.footer-link {
+  margin: 0 10px;
+}
+.bottom-container a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.bottom-container a:hover {
+  color: white !important;
+}
+.bottom-container a:visited {
+  color: black;
+}
