@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 .top-container {
   width: 100%;
@@ -25,6 +26,10 @@ body {
   padding: 9px;
   margin-right: 25px;
 }
+.flex-container a{
+  text-decoration: none;
+}
+
 
 .introduction{
   width: 100%;
@@ -33,19 +38,21 @@ body {
 }
 .intro{
   text-align: center;
-  margin: auto 25% auto 25%;
+  margin: auto 10% auto 10%;
   height: 450px; /*see this and remove */
-  width: 50%;
+  width: 80%;
 }
 .Password{
   margin: 0;
   font-size: 3rem;
-  padding-top: 80px; 
+  padding-top: 80px;
+  font-family: 'Raleway', sans-serif; 
 }
 .Buddy{
   margin: 0;
   font-size: 3rem;
   padding-bottom: 0px;
+  font-family: 'Raleway', sans-serif;
 }
 .text-PB{
   font-size: 18px;
@@ -86,9 +93,10 @@ body {
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
-.bottom-container a:hover {
-  color: white !important;
-}
-.bottom-container a:visited {
+/* .bottom-container a:visited { 
   color: black;
-}
+} */
+
+/* .windowsicon:hover{
+  transform:scale(1.1)
+} */

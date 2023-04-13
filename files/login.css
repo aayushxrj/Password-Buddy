@@ -1,12 +1,19 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
+
 }
 .top-container {
-  width: 100%;
-  background-color: #5c75b4;
-  height: 80px;
-}
+    width: 100%;
+    height: 80px;
+    border: 1px solid #eff2f5;
+    border-bottom-left-radius: 0.9rem;
+    border-bottom-right-radius: 0.9rem;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 rgb(62 28 131 / 25%);
+  }
 
 .top-container div p {
   color: #000000;
@@ -20,42 +27,48 @@ body {
   padding: 9px;
   margin-right: 25px;
 }
-
-
-
-.middle-container{
-    width: 100%;
-    background-color: #ffffff9e;
-    margin: 20px auto 20px auto;
-}
-.login-form{
-    height: 500px;
-    margin: auto 25% auto 25%;
-    width: 50%;
+.flex-container a{
+  text-decoration: none;
 }
 
-
-
+.middle-container {
+  width: 100%;
+  background-color: #ffffff9e;
+  margin: 20px auto 20px auto;
+}
+.login-box {
+  height: 700px;
+  margin: auto 25% auto 25%;
+  width: 50%;
+  border: 1px solid #eff2f5;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 0 10px 0 rgb(62 28 131 / 25%);
+}
+.login-form {
+}
 .bottom-container {
   width: 100%;
   display: block;
-  background-color: #5c75b4;
   padding: 10px 0 20px;
   text-align: center;
+  /*added*/
+  border: 1px solid #eff2f5;
+  overflow: hidden;
+  background-color: #ffffff;
+  /* box-shadow: 0 0 10px 0 rgb(62 28 131 / 25%); */
 }
 .bottom-container p {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .footer-link {
   margin: 0 10px;
 }
 .bottom-container a {
-  color: rgb(0, 0, 0);
+  /* color: rgb(0, 0, 0); */
   text-decoration: none;
 }
-.bottom-container a:hover {
-  color: white !important;
-}
-.bottom-container a:visited {
+/* .bottom-container a:visited { 
   color: black;
-}
+} */
