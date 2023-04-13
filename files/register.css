@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-
 }
 .top-container {
     width: 100%;
@@ -37,7 +36,6 @@ body {
   margin: 20px auto 20px auto;
 }
 .register-box {
-  height: 700px;
   margin: auto 25% auto 25%;
   width: 50%;
   border: 1px solid #eff2f5;
@@ -46,8 +44,54 @@ body {
   background: #ffffff;
   box-shadow: 0 0 10px 0 rgb(62 28 131 / 25%);
 }
+
+                                                       /* change font of form*/
 .register-form {
+  text-align: center;
+  padding: 5%;
 }
+.register-form > div {
+  padding-top: 5%;
+}
+
+.label-text{
+  text-align: left;
+}
+
+label{
+  font-size: 13px;
+  width: 70%;
+  margin-left:13% ;
+}
+.agree{
+  margin-left: 0px;
+}
+
+input[type=text]{
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* resize: vertical; */
+}
+input[type=email]{
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type=password]{
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
+
+
+
 .bottom-container {
   width: 100%;
   display: block;
