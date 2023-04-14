@@ -68,7 +68,7 @@ label{
   margin-left: 0px;
 }
 
-input[type=text]{
+input[type=email]{
   width: 70%;
   padding: 12px;
   border: 1px solid #ccc;
