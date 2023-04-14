@@ -10,42 +10,42 @@
 <body>
     <div class = "top-container">
         <div class="flex-container">
-            <div><p><a class="home" href="/index.html">Home</a></p></div>
+            <div><p><a class="home" href="./../index.html">Home</a></p></div>
             <div><p><a class="login" href="login.html">Login?</a></p></div>
           </div>
     </div>
 
     <div class="middle-container">
         <div class="register-box">
-            <form action="">
+            <form action="" onsubmit="" >
                 <div class="register-form">
                     <h3>Create Your New Account!</h3>
                     <div>
                         <div class="label-text"><label>Your Name</label></div>
-                        <div><input type="text" name="name" placeholder="Please enter your name"></div>
+                        <div><input type="text" id="full_name" placeholder="Please enter your name"></div>
                     </div>
                     <div>
                         <div class="label-text"><label>Email Address</label></div>
-                        <div><input type="email" name="email"placeholder="Please enter your email"></div>
+                        <div><input type="email" id="email" placeholder="Please enter your email"></div>
                     </div>
                     <div>
                         <div class="label-text"><label>Username</label></div>
-                        <div><input type="text" name="username" placeholder="Please enter your username"></div>
+                        <div><input type="text" id="username" placeholder="Please enter your username"></div>
                     </div>
                     <div>
                         <div class="label-text"><label>Password</label></div>
-                        <div><input type="password" name="password"placeholder="Please enter your password"></div>
+                        <div><input type="password" id="password"placeholder="Please enter your password"></div>
                     </div>
                     <div>
                         <div class="label-text"><label>Confirm Password</label></div>
-                        <div><input type="password" name="confirmpassword"placeholder="Please confirm your password"></div>
+                        <div><input type="password" id="confirm_password"placeholder="Please confirm your password"></div>
                     </div>
                     <div>
                         <input type="checkbox" name="checkbox" id="">
                         <label class="agree">I agree to the terms and conditions.</label>
                     </div>
                     <div>
-                        <button class="">Create an Account</button>
+                        <button id="register-button">Create an Account</button>
                     </div>
                 </div>
             </form>
@@ -58,7 +58,14 @@
         <a class="footer-link" target = "_blank" href="https://github.com/aayushxrj">Github</a>
     </div> 
 
-    <!-- <script src ="res/register.js" charset="UTF-8"></script> -->
     
 </body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- 
+<script type="module" src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js"></script> -->
+<script type="module" src ="register.js"></script>
+
 </html>
