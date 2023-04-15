@@ -14,23 +14,26 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const full_name = document.getElementById('full_name').value;
-const email = document.getElementById('email').value;
-const username = document.getElementById('username').value;
-const password = document.getElementById('password').value;
-const confirm_password = document.getElementById('confirm_password').value;
 
 const registerbtn = document.getElementById("register-button");
 
 
-registerbtn.addEventListener("click", function(){
+registerbtn.addEventListener("click", function(event){
+    event.preventDefault();
+    const full_name = document.getElementById('full_name').value;
+    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const confirm_password = document.getElementById('confirm_password').value;
+    const checkbox = document.getElementById('checkbox');
+
     var isVerified = true;
 
-    if(!validate_email){
+    if(!validate_email(email)){
         alert("Email is in wrong format!");
         isVerified = false;
     }
-    if(!validate_password){
+    if(!validate_password(password)){
         alert("Password length must be greater than 6!");
         isVerified = false;
     }
@@ -42,6 +45,10 @@ registerbtn.addEventListener("click", function(){
         alert('One or More Extra Fields is empty!!')
         isVerified = false;
     }
+    if(!checkbox.checked){
+        alert('Please accept the terms and conditions');
+        isVerified = false;
+    }
     if(isVerified) {
         createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
@@ -49,6 +56,7 @@ registerbtn.addEventListener("click", function(){
           const user = userCredential.user;
           // ...
           window.alert("Success! Account created.");
+          window.location.href = "login.html";
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -61,7 +69,7 @@ registerbtn.addEventListener("click", function(){
 
 //validate functions
 function validate_email(email) {
-    expression = /^[^@]+@\w+(\.\w+)+\w$/
+    var expression = /^[^@]+@\w+(\.\w+)+\w$/
     if (expression.test(email) == true) {
         return true
     }

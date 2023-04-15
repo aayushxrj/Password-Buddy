@@ -14,15 +14,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const email = document.getElementById('email').value;
-const password = document.getElementById('password').value;
 
 const loginbtn = document.getElementById("login-button");
 
-loginbtn.addEventListener("click", function() {  
+loginbtn.addEventListener("click", function(event) {  
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
     var isVerified = true;
 
-    if(!validate_email){
+    if(!validate_email(email)){
         alert("Email is in wrong format!");
         isVerified = false;
     }
@@ -48,7 +50,7 @@ loginbtn.addEventListener("click", function() {
 
 //validate functions
 function validate_email(email) {
-    expression = /^[^@]+@\w+(\.\w+)+\w$/
+    var expression = /^[^@]+@\w+(\.\w+)+\w$/
     if (expression.test(email) == true) {
         return true
     }
