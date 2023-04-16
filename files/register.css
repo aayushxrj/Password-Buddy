@@ -107,12 +107,9 @@ input[type=password]{
     margin-bottom: 10px;
 }
 .footer-link {
-  margin: 0 10px;
+  margin: 7px;
 }
-.bottom-container a {
-  /* color: rgb(0, 0, 0); */
-  text-decoration: none;
+.footer-link >img{
+  height: 1.5rem;
+  width: 1.5rem;
 }
-/* .bottom-container a:visited { 
-  color: black;
-} */
