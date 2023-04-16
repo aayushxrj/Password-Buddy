@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-
 }
 .top-container {
     width: 100%;
@@ -80,6 +79,11 @@ input[type=password]{
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+#error-msg{
+  font-size: 0.9rem;
+  margin-top: 0px;
 }
 
                                                  /*issue with footer*/

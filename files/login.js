@@ -16,6 +16,7 @@ const auth = getAuth(app);
 
 
 const loginbtn = document.getElementById("login-button");
+document.getElementById("error-msg").style.display = "none";
 
 loginbtn.addEventListener("click", function(event) {  
     event.preventDefault();
@@ -24,13 +25,20 @@ loginbtn.addEventListener("click", function(event) {
 
     var isVerified = true;
 
-    if(!validate_email(email)){
-        alert("Email is in wrong format!");
+    if (!validate_email(email)) {
+        document.getElementById("error-msg").style.display = "block";
+        document.getElementById("error-msg").innerHTML =
+          "ERROR : Not a valid email address";
         isVerified = false;
+        return;
     }
-    if (validate_field(password) == false) {
-        alert('Password field is empty!!')
+    //NOT WORKING WHY??
+    if (!validate_field(password)) {
+        document.getElementById("error-msg").style.display = "block";
+        document.getElementById("error-msg").innerHTML =
+            "ERROR : Password field is empty";
         isVerified = false;
+        return;
     }
     
     if(isVerified){
@@ -38,13 +46,16 @@ loginbtn.addEventListener("click", function(event) {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          window.alert("Success! Welcome back!");
+          document.getElementById("error-msg").style.display = "block";
+          document.getElementById("error-msg").innerHTML = "Success! Welcome back!";
           window.location.href = "dashboard.html";
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          window.alert(errorCode+" "+errorMessage);
+          console.log(errorCode + " " + errorMessage);
+            document.getElementById("error-msg").style.display = "block";
+            document.getElementById("error-msg").innerHTML = errorMessage;
         });}    
   });
 
