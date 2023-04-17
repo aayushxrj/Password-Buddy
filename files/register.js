@@ -3,10 +3,16 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+import {
+  getDatabase,
+  ref,
+  set,
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBjLJh9tUbOYMiPRVrElp_qWtcfWRqqGio",
   authDomain: "password-buddy.firebaseapp.com",
+  databaseURL: "https://password-buddy-default-rtdb.firebaseio.com",
   projectId: "password-buddy",
   storageBucket: "password-buddy.appspot.com",
   messagingSenderId: "1071119548350",
@@ -15,6 +21,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getDatabase();
 
 const registerbtn = document.getElementById("register-button");
 document.getElementById("error-msg").style.display = "none";
@@ -29,7 +36,7 @@ registerbtn.addEventListener("click", function (event) {
   const checkbox = document.getElementById("checkbox");
 
   var isVerified = true;
-    /* full_name & username empty not working */
+  /* full_name & username empty not working */
   if (validate_field(full_name) == false || validate_field(username) == false) {
     document.getElementById("error-msg").style.display = "block";
     document.getElementById("error-msg").innerHTML =
@@ -58,7 +65,7 @@ registerbtn.addEventListener("click", function (event) {
     isVerified = false;
     return;
   }
-  
+
   if (!checkbox.checked) {
     document.getElementById("error-msg").style.display = "block";
     document.getElementById("error-msg").innerHTML =
@@ -71,11 +78,34 @@ registerbtn.addEventListener("click", function (event) {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        // ...
-        document.getElementById("error-msg").style.display = "block";
-        document.getElementById("error-msg").innerHTML =
-          "Success! Account created. Redirecting to login...";
-        window.location.href = "login.html";
+
+        // for writing onto database
+        const reference = ref(db, "users/" + user.uid);
+        set(reference, {
+          full_name: full_name,
+          email: email,
+          username: username,
+          password: password,
+          last_login: Date.now(),
+        })
+          .then(() => {
+            document.getElementById("error-msg").style.display = "block";
+            document.getElementById("error-msg").innerHTML =
+              "Success! Account created. Redirecting to login...";
+            window.location.href = "login.html";
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode + " " + errorMessage);
+            document.getElementById("error-msg").style.display = "block";
+            document.getElementById("error-msg").innerHTML = errorMessage;
+          });
+
+        // document.getElementById("error-msg").style.display = "block";
+        // document.getElementById("error-msg").innerHTML =
+        //   "Success! Account created. Redirecting to login...";
+        // window.location.href = "login.html";
       })
       .catch((error) => {
         const errorCode = error.code;
