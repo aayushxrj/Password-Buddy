@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
 
 const firebaseConfig = {
@@ -14,11 +14,18 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        document.getElementById("error-msg").style.display = "block";
+        document.getElementById("error-msg").innerHTML = "Welcome back! Redirecting...";
+        window.location.href = "dashboard.html";
+    }
+});
 
 const loginbtn = document.getElementById("login-button");
 document.getElementById("error-msg").style.display = "none";
 
-loginbtn.addEventListener("click", function(event) {  
+loginbtn.addEventListener("click", function (event) {
     event.preventDefault();
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
@@ -28,7 +35,7 @@ loginbtn.addEventListener("click", function(event) {
     if (!validate_email(email)) {
         document.getElementById("error-msg").style.display = "block";
         document.getElementById("error-msg").innerHTML =
-          "ERROR : Not a valid email address";
+            "ERROR : Not a valid email address";
         isVerified = false;
         return;
     }
@@ -40,24 +47,25 @@ loginbtn.addEventListener("click", function(event) {
         isVerified = false;
         return;
     }
-    
-    if(isVerified){
+
+    if (isVerified) {
         signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          document.getElementById("error-msg").style.display = "block";
-          document.getElementById("error-msg").innerHTML = "Success! Welcome back!";
-          window.location.href = "dashboard.html";
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorCode + " " + errorMessage);
-            document.getElementById("error-msg").style.display = "block";
-            document.getElementById("error-msg").innerHTML = errorMessage;
-        });}    
-  });
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                document.getElementById("error-msg").style.display = "block";
+                document.getElementById("error-msg").innerHTML = "Success! Welcome back!";
+                window.location.href = "dashboard.html";
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode + " " + errorMessage);
+                document.getElementById("error-msg").style.display = "block";
+                document.getElementById("error-msg").innerHTML = errorMessage;
+            });
+    }
+});
 
 //validate functions
 function validate_email(email) {
@@ -73,8 +81,8 @@ function validate_field(field) {
     if (field == null) {
         return false
     }
-    else{
+    else {
         return true
     }
 }
-  
+

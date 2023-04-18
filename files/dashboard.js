@@ -26,9 +26,9 @@ function checkAuth() {
       );
     }
     else {
-        document.body.removeAttribute("style");
-        document.body.classList.add("authorized");
-      }
+      document.body.removeAttribute("style");
+      document.body.classList.add("authorized");
+    }
   });
 }
 
