@@ -91,8 +91,8 @@ registerbtn.addEventListener("click", function (event) {
           .then(() => {
             document.getElementById("error-msg").style.display = "block";
             document.getElementById("error-msg").innerHTML =
-              "Success! Account created. Redirecting to login...";
-            window.location.href = "login.html";
+              "Success! Account created. Redirecting to dashboard...";
+            window.location.href = "dashboard.html";
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -140,9 +140,8 @@ function validate_field(field) {
     return false;
   }
   if (field.length <= 0) {
-    return false
-  } 
-  else {
+    return false;
+  } else {
     return true;
   }
 }
