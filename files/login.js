@@ -81,6 +81,9 @@ function validate_field(field) {
     if (field == null) {
         return false
     }
+    if (field.length <= 0) {
+        return false
+    }
     else {
         return true
     }

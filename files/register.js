@@ -138,7 +138,11 @@ function validate_password(password) {
 function validate_field(field) {
   if (field == null) {
     return false;
-  } else {
+  }
+  if (field.length <= 0) {
+    return false
+  } 
+  else {
     return true;
   }
 }
