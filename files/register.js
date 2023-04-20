@@ -2,6 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebas
 import {
   getAuth,
   createUserWithEmailAndPassword,
+  signOut
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 import {
   getDatabase,
@@ -89,6 +90,7 @@ registerbtn.addEventListener("click", function (event) {
           last_login: Date.now(),
         })
           .then(() => {
+            signOut(auth)
             document.getElementById("error-msg").style.display = "block";
             document.getElementById("error-msg").innerHTML =
               "Success! Account created. Redirecting to login...";
