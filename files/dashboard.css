@@ -24,7 +24,9 @@ body {
 }
 .flex-container {
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
+  justify-content: space-between;
+  align-items: center;
 }
 .flex-container > div {   /* to be edited*/
   font-size: 20px;
@@ -33,7 +35,8 @@ body {
 }
 
 #fullname{
-  margin-right:60vw;
+  /* margin-right:60vw; */
+  margin-left: 2vw;
   white-space: nowrap;
   font-weight: 600;
 }
