@@ -4,10 +4,16 @@ import {
   onAuthStateChanged,
   signOut,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+import {
+  getDatabase,
+  ref,
+  get
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBjLJh9tUbOYMiPRVrElp_qWtcfWRqqGio",
   authDomain: "password-buddy.firebaseapp.com",
+  databaseURL: "https://password-buddy-default-rtdb.firebaseio.com",
   projectId: "password-buddy",
   storageBucket: "password-buddy.appspot.com",
   messagingSenderId: "1071119548350",
@@ -16,6 +22,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getDatabase();
 
 function checkAuth() {
   onAuthStateChanged(auth, (user) => {
@@ -28,12 +35,33 @@ function checkAuth() {
     else {
       document.body.removeAttribute("style");
       document.body.classList.add("authorized");
+
+      //for displaying the current user's username
+      var user = auth.currentUser;
+      var usernameRef = ref(db, 'users/' + user.uid + '/username');
+      get(usernameRef)
+        .then((snapshot) => {
+          document.getElementById('ddusername').innerHTML = snapshot.val();
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      var fullnameRef = ref(db, 'users/' + user.uid + '/full_name');
+      get(fullnameRef)
+        .then((snapshot) => {
+          document.getElementById('fullname').innerHTML = "Welcome " + snapshot.val() + "!";
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
   });
 }
 
 // Call the function once when the page is loaded
 checkAuth();
+
+
 
 const logoutButton = document.querySelector(".logout");
 logoutButton.addEventListener("click", () => {

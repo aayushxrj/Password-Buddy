@@ -34,7 +34,14 @@ body {
 .flex-container a {
   text-decoration: none;
 }
-
+#fullname{
+  margin-right:55vw;
+  white-space: nowrap;
+  font-weight: 600;
+}
+#ddusername{
+  font-weight: 600;
+}
 .trial {
   text-align: center;
   height: 400px;
