@@ -56,7 +56,7 @@ body {
   overflow: hidden;
   box-shadow: 0 0 10px 0 rgb(62 28 131 / 25%);
   opacity: 0;
-  pointer-events: none;
+  /* pointer-events: none; */
   transform: translateY(-10px);
   transition: all 0.4s ease;
   /* z-index: 999; */
