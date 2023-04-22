@@ -69,7 +69,7 @@ hr {
   border-color: #e2e5de;
   border-width: 5px;
   width: 10%;
-  margin: 50px auto 50px auto;
+  margin: 70px auto 70px auto;
 }
 
 .featurebox {
@@ -148,6 +148,45 @@ hr {
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgb(62 28 131 / 25%);
 }
+
+
+
+/*trial*/
+.securitybox{
+  text-align: center;
+  width: 100%;
+}
+.security{
+  width: 80%;
+  margin: auto 10% auto 10%;
+}
+.security >div{
+  text-align: left;
+}
+.security-heading {
+  margin-left: 21%;
+  font-size: 3rem;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+}
+.text-s1 {
+  font-size: 18px;
+  padding-top: 2.5rem;
+  /* text-align: left; */
+}
+.text-s2 {
+  font-size: 18px;
+  padding-bottom: 4rem;
+  /* text-align: left; */
+}
+.security-img{
+  float: right;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+/*trial*/
+
+
 
 .bottom-container {
   width: 100%;
