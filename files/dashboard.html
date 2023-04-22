@@ -13,11 +13,16 @@
 </head>
 <body style="display: none;"class="authorized">
     <div class = "top-container">
-        <!-- <div><p>Welcome</p></div> -->
         <div class="flex-container">
             <div><p id="fullname"><!--fullname--></p></div>
-            <div><p id="ddusername"> <!--username--> </p></div>
-            <div><p><a class="logout" href="register.html">Logout</a></p></div>
+            <div class="dropdown-menu"> 
+                <button><p id="ddusername"> <!--username--></p></button>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a class="logout" href="register.html">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 

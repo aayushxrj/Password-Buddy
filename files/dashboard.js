@@ -41,7 +41,7 @@ function checkAuth() {
       var usernameRef = ref(db, 'users/' + user.uid + '/username');
       get(usernameRef)
         .then((snapshot) => {
-          document.getElementById('ddusername').innerHTML = snapshot.val();
+          document.getElementById('ddusername').innerHTML = snapshot.val()+"▾";
         })
         .catch((error) => {
           console.error(error);
