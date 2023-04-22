@@ -77,3 +77,16 @@ logoutButton.addEventListener("click", () => {
       console.error(error);
     });
 });
+
+
+const dropdownButton = document.querySelector("#ddusername");
+const dropdown = document.querySelector(".drop");
+
+
+document.addEventListener("click",(e)=>{
+  if(!e.target.closest(".dropdown-menu"))  {dropdown.classList.remove("show");}
+})
+
+dropdownButton.addEventListener("click",(e)=>{
+  dropdown.classList.toggle("show");
+})
