@@ -89,6 +89,19 @@ input[type=password]{
   font-weight: bold;
 }
 
+button {
+  background-color: #0077b6;
+  color: #ffffff;
+  border: none;
+  padding: 7px 19px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005e8a;
+}
                                                  /*issue with footer*/
 
 .bottom-container {
