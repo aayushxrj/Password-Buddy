@@ -109,23 +109,19 @@ body {
 }
 
 .bottom-container {
-  width: 100%;
+  width: 98vw;
   display: block;
-  padding: 10px 0 20px;
+  padding: 0.625rem 0 1.2rem;
   text-align: center;
-  /*added*/
+  margin-top: 4rem;
   border: 1px solid #eff2f5;
   overflow: hidden;
   background-color: #ffffff;
-  /* box-shadow: 0 0 10px 0 rgb(62 28 131 / 25%); */
-}
-.bottom-container p {
-  margin-bottom: 10px;
 }
 .footer-link {
-  margin: 7px;
+  margin: 0.5rem;
 }
-.footer-link > img {
+.footer-link >img{
   height: 1.5rem;
   width: 1.5rem;
 }
